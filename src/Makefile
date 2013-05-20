@@ -26,7 +26,7 @@ $(LUAOBJ): obj/lua_%.o: %.lua Makefile
 	luajit -bg $< $@
 
 $(COBJ): obj/%.o: %.c $(CHDR) Makefile
-	gcc -Wl,-E -I ../deps/luajit/src -c -Wall -Werror -o $@ $<
+	gcc -D_GNU_SOURCE -Wl,-E -I ../deps/luajit/src -c -Wall -Werror -o $@ $<
 
 $(HOBJ): obj/%_h.o: %.h Makefile
 	@echo Generating $(basename $@).lua from $< - $(basename $@)
