@@ -1,6 +1,6 @@
 #include <assert.h>
 #include <fcntl.h>
-#include <linux/vhost.h>
+#include "linux/vhost.h"
 #include <linux/virtio_ring.h>
 #include <stdint.h>
 #include <string.h>
