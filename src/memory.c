@@ -15,7 +15,7 @@
 void *allocate_huge_page(int size)
 {
   void *ptr = mmap(NULL, size, PROT_READ | PROT_WRITE,
-                   MAP_PRIVATE | MAP_ANONYMOUS | MAP_HUGETLB, 0, 0);
+                   MAP_PRIVATE | MAP_ANONYMOUS, 0, 0);
   if (ptr == MAP_FAILED) {
       return NULL;
   } else {
